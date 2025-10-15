@@ -68,56 +68,56 @@
       <DependentUpon>AddEditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Client.cs">
-      <DependentUpon>KonstantinovaModel.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="ClientService.cs">
-      <DependentUpon>KonstantinovaModel.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="DocumentByService.cs">
-      <DependentUpon>KonstantinovaModel.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="Gender.cs">
-      <DependentUpon>KonstantinovaModel.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
     </Compile>
-    <Compile Include="KonstantinovaModel.Context.cs">
+    <Compile Include="Konstantinova_Autoservice.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KonstantinovaModel.Context.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="KonstantinovaModel.cs">
+    <Compile Include="Konstantinova_Autoservice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KonstantinovaModel.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
     </Compile>
-    <Compile Include="KonstantinovaModel.Designer.cs">
+    <Compile Include="Konstantinova_Autoservice.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KonstantinovaModel.edmx</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.edmx</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="Manufacturer.cs">
-      <DependentUpon>KonstantinovaModel.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>KonstantinovaModel.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductPhoto.cs">
-      <DependentUpon>KonstantinovaModel.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductSale.cs">
-      <DependentUpon>KonstantinovaModel.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="Service.cs">
-      <DependentUpon>KonstantinovaModel.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="ServicePage.xaml.cs">
       <DependentUpon>ServicePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ServicePhoto.cs">
-      <DependentUpon>KonstantinovaModel.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
     </Compile>
     <Compile Include="Tag.cs">
-      <DependentUpon>KonstantinovaModel.tt</DependentUpon>
+      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml">
       <SubType>Designer</SubType>
@@ -158,12 +158,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="KonstantinovaModel.edmx">
+    <EntityDeploy Include="Konstantinova_Autoservice.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>KonstantinovaModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Konstantinova_Autoservice.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="KonstantinovaModel.edmx.diagram">
-      <DependentUpon>KonstantinovaModel.edmx</DependentUpon>
+    <None Include="App.Config" />
+    <None Include="Konstantinova_Autoservice.edmx.diagram">
+      <DependentUpon>Konstantinova_Autoservice.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -172,28 +173,45 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Res\service_logo.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Res\service_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="KonstantinovaModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>KonstantinovaModel.Context.cs</LastGenOutput>
-      <DependentUpon>KonstantinovaModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="KonstantinovaModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KonstantinovaModel.edmx</DependentUpon>
-      <LastGenOutput>KonstantinovaModel.cs</LastGenOutput>
-    </Content>
+    <Resource Include="Res\picture.png" />
+    <Resource Include="Услуги автосервиса\diz.jpg" />
+    <Resource Include="Услуги автосервиса\rulevoe-upravlenie-avtomobilya.jpg" />
+    <Resource Include="Услуги автосервиса\transmission.jpg" />
+    <Resource Include="Услуги автосервиса\АКПП.jpg" />
+    <Resource Include="Услуги автосервиса\Вариатор.jpg" />
+    <Resource Include="Услуги автосервиса\Выхлопная система.jpg" />
+    <Resource Include="Услуги автосервиса\ГУР.png" />
+    <Resource Include="Услуги автосервиса\Двигатель.png" />
+    <Resource Include="Услуги автосервиса\Дополнительные услуги.png" />
+    <Resource Include="Услуги автосервиса\Кондиционер.jpg" />
+    <Resource Include="Услуги автосервиса\КПП.png" />
+    <Resource Include="Услуги автосервиса\Подвеска.png" />
+    <Resource Include="Услуги автосервиса\Сцепление.jpg" />
+    <Resource Include="Услуги автосервиса\Техническое обслуживание.png" />
+    <Resource Include="Услуги автосервиса\Топливная система.png" />
+    <Resource Include="Услуги автосервиса\Шиномонтаж.jpg" />
+    <Resource Include="Услуги автосервиса\Электрика.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Konstantinova_Autoservice.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Konstantinova_Autoservice.edmx</DependentUpon>
+      <LastGenOutput>Konstantinova_Autoservice.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Konstantinova_Autoservice.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Konstantinova_Autoservice.edmx</DependentUpon>
+      <LastGenOutput>Konstantinova_Autoservice.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

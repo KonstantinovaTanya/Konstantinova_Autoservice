@@ -28,11 +28,13 @@ namespace Konstantinova_Autoservice
         public decimal Cost { get; set; }
         public double Discount { get; set; }
 
-        public int DiscountIt {
+        public int DiscountIt
+        {
             get
             {
                 return (int)(Discount * 100);
             }
+
         }
         public string Description { get; set; }
     

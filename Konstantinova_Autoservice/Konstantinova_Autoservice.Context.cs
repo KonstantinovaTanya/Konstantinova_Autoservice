@@ -15,17 +15,19 @@ namespace Konstantinova_Autoservice
     
     public partial class КонстантиноваАвтосервисEntities : DbContext
     {
-        
+        public КонстантиноваАвтосервисEntities()
+            : base("name=КонстантиноваАвтосервисEntities")
+        {
+        }
+
         private static КонстантиноваАвтосервисEntities _context;
 
         public static КонстантиноваАвтосервисEntities GetContext()
         {
             if (_context == null)
                 _context = new КонстантиноваАвтосервисEntities();
-
             return _context;
         }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
