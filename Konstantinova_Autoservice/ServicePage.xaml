@@ -6,7 +6,9 @@
       xmlns:local="clr-namespace:Konstantinova_Autoservice"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ServicePage" FontFamily="Tw Cen MT">
+      Title="ServicePage" FontFamily="Tw Cen MT"
+      IsVisibleChanged="Page_IsVisibleChanged">
+
 
     <Grid>
 
@@ -47,8 +49,11 @@
                  Width="300" FontSize="20" Checked="RButtonDown_Checked"
                  Name="RButtonDown"></RadioButton>
         </StackPanel>
-        
-        <ListView Name="ServiceListView" Grid.Row="2" >
+
+        <Button Content="Добавить" Name="AddButton" Click="AddButton_Click"
+                HorizontalAlignment="Right" VerticalAlignment="Bottom"></Button>
+
+            <ListView Name="ServiceListView" Grid.Row="2" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -82,7 +87,7 @@
                         <TextBlock Text="{Binding DiscountIt, StringFormat=*скидка {0} % }" Opacity="{Binding DiscountIt}" Margin="5" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" FontSize="16"></TextBlock>
 
                         <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
-                            <Button Name="EditButton" Content="редактировать" Margin="2"></Button>
+                            <Button Name="EditButton" Content="редактировать" Margin="2" Click="EditButton_Click"></Button>
                             <Button Name="DeleteButton" Click="DeleteButton_Click" Content="удалить" Margin="2"></Button>
                         </StackPanel>
                     </Grid>
@@ -105,6 +110,5 @@
             <Button Name="RightDirButton" Content="&gt;" Width="20" Height="20"
                     Click="RightDirButton_Click"></Button>
         </StackPanel>
-
     </Grid>
 </Page>
