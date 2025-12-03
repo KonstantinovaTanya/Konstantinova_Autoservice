@@ -27,7 +27,7 @@ namespace Konstantinova_Autoservice
             InitializeComponent();
             //добавляем строки
                 // загрузить в список бд
-            var currentServices = КонстантиноваАвтосервисEntities.GetContext().Service.ToList();
+            var currentServices = КонстантиноваАвтосервисEntities1.GetContext().Service.ToList();
                 // связать с вашим листвью
             ServiceListView.ItemsSource = currentServices;
             //добавили строки
@@ -59,7 +59,7 @@ namespace Konstantinova_Autoservice
         }
         private void UpdateServices()
         {
-            var currentServices = КонстантиноваАвтосервисEntities.GetContext().Service.ToList();
+            var currentServices = КонстантиноваАвтосервисEntities1.GetContext().Service.ToList();
 
             if (ComboType.SelectedIndex == 0)
             {
@@ -250,7 +250,7 @@ namespace Konstantinova_Autoservice
             var currentService = (sender as Button).DataContext as Service;
 
             // Проверка на возможность удаления
-            var currentClientServices = КонстантиноваАвтосервисEntities.GetContext().ClientService.ToList();
+            var currentClientServices = КонстантиноваАвтосервисEntities1.GetContext().ClientService.ToList();
             currentClientServices = currentClientServices.Where(p => p.ServiceID == currentService.ID).ToList();
 
             if (currentClientServices.Count != 0) // Если есть записи на этот сервис
@@ -262,10 +262,10 @@ namespace Konstantinova_Autoservice
                 {
                     try
                     {
-                        КонстантиноваАвтосервисEntities.GetContext().Service.Remove(currentService);
-                        КонстантиноваАвтосервисEntities.GetContext().SaveChanges();
+                        КонстантиноваАвтосервисEntities1.GetContext().Service.Remove(currentService);
+                        КонстантиноваАвтосервисEntities1.GetContext().SaveChanges();
                         // Выводим в листвью измененную таблицу Сервис
-                        ServiceListView.ItemsSource = КонстантиноваАвтосервисEntities.GetContext().Service.ToList();
+                        ServiceListView.ItemsSource = КонстантиноваАвтосервисEntities1.GetContext().Service.ToList();
                         // Чтобы применялись фильтры и поиск, если они были на форме изначально
                         UpdateServices();
                     }
@@ -276,6 +276,8 @@ namespace Konstantinova_Autoservice
                 }
             }
         }
+
+        
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
@@ -288,14 +290,24 @@ namespace Konstantinova_Autoservice
             //открыть окно редактирования/добавления услуг
             Manager.MainFrame.Navigate(new AddEditPage((sender as Button).DataContext as Service));
         }
-        
+        private void SignUpButton_Click(object sender, RoutedEventArgs e)
+        {
+            //открыть окно записи на выбранную услугу
+            Manager.MainFrame.Navigate(new SignUpPage((sender as Button).DataContext as Service));
+        }
+
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             if(Visibility == Visibility.Visible)
             {
-                КонстантиноваАвтосервисEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                ServiceListView.ItemsSource = КонстантиноваАвтосервисEntities.GetContext().Service.ToList();
+                КонстантиноваАвтосервисEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                ServiceListView.ItemsSource = КонстантиноваАвтосервисEntities1.GetContext().Service.ToList();
             }
+        }
+
+        private void ServiceListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

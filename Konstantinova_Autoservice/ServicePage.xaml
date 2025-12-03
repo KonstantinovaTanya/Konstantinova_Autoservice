@@ -53,10 +53,10 @@
         <Button Content="Добавить" Name="AddButton" Click="AddButton_Click"
                 HorizontalAlignment="Right" VerticalAlignment="Bottom"></Button>
 
-            <ListView Name="ServiceListView" Grid.Row="2" >
+        <ListView Name="ServiceListView" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ServiceListView_SelectionChanged" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
+                    <Grid Background="{Binding FonStyle}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
@@ -82,13 +82,18 @@
                         </Image>
 
                         <TextBlock Text="{Binding Title}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap"></TextBlock>
-                        <TextBlock Text="{Binding Cost, StringFormat={}{0:0} рублей за}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" FontSize="20"></TextBlock>
-                        <TextBlock Text="{Binding DurationIn}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" FontSize="20"></TextBlock>
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
+                            <TextBlock Text="{Binding OldCost}" FontSize="20" TextDecorations="Strikethrough" Margin="5"></TextBlock>
+                            <TextBlock Text="{Binding NewCost, StringFormat={}{0:0} рублей за}" FontSize="20" Margin="5"></TextBlock>
+                            <TextBlock Text="{Binding DurationIn}" FontSize="20" Margin="5"></TextBlock>
+                            <TextBlock Text=" сек." FontSize="20" Margin="5"></TextBlock>
+                        </StackPanel>
                         <TextBlock Text="{Binding DiscountIt, StringFormat=*скидка {0} % }" Opacity="{Binding DiscountIt}" Margin="5" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" FontSize="16"></TextBlock>
 
-                        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+                        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Stretch">
                             <Button Name="EditButton" Content="редактировать" Margin="2" Click="EditButton_Click"></Button>
-                            <Button Name="DeleteButton" Click="DeleteButton_Click" Content="удалить" Margin="2"></Button>
+                            <Button Name="DeleteButton" Content="удалить" Margin="2" Click="DeleteButton_Click"></Button>
+                            <Button Name="SignUpButton" Content="записать"  Margin="2" Click="SignUpButton_Click"></Button>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
@@ -110,5 +115,7 @@
             <Button Name="RightDirButton" Content="&gt;" Width="20" Height="20"
                     Click="RightDirButton_Click"></Button>
         </StackPanel>
+
+        
     </Grid>
 </Page>

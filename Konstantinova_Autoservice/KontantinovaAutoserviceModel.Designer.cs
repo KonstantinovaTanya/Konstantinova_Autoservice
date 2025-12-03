@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "D:\3 курс\исп 3523\Константинова ТИ\Konstantinova_Autoservice — копия\Konstantinova_Autoservice\Konstantinova_Autoservice.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\konst\OneDrive\Рабочий стол\Автосервис\Konstantinova_Autoservice — копия\Konstantinova_Autoservice\KontantinovaAutoserviceModel.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

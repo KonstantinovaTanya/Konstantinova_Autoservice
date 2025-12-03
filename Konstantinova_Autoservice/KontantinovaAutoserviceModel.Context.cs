@@ -13,21 +13,21 @@ namespace Konstantinova_Autoservice
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class КонстантиноваАвтосервисEntities : DbContext
+    public partial class КонстантиноваАвтосервисEntities1 : DbContext
     {
-        public КонстантиноваАвтосервисEntities()
-            : base("name=КонстантиноваАвтосервисEntities")
+        public КонстантиноваАвтосервисEntities1()
+            : base("name=КонстантиноваАвтосервисEntities1")
         {
         }
+        private static КонстантиноваАвтосервисEntities1 _context;
 
-        private static КонстантиноваАвтосервисEntities _context;
-
-        public static КонстантиноваАвтосервисEntities GetContext()
+        public static КонстантиноваАвтосервисEntities1 GetContext()
         {
             if (_context == null)
-                _context = new КонстантиноваАвтосервисEntities();
+                _context = new КонстантиноваАвтосервисEntities1();
             return _context;
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

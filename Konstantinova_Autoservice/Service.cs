@@ -11,9 +11,13 @@ namespace Konstantinova_Autoservice
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Globalization;
+    using System.Windows.Media;
+
     public partial class Service
     {
+        private decimal newCostValue;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Service()
         {
@@ -24,10 +28,58 @@ namespace Konstantinova_Autoservice
         public int ID { get; set; }
         public string Title { get; set; }
         public string MainImagePath { get; set; }
-        public string DurationIn { get; set; }
+        public int DurationIn { get; set; }
+        
         public decimal Cost { get; set; }
-        public double Discount { get; set; }
+        public string OldCost
+        {
+            get
+            {
+                if (Discount > 0)
+                {
+                    return Cost.ToString(CultureInfo.InvariantCulture);
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+        public decimal NewCost
+        {
+            get
+            {
+                if (Discount > 0)
+                {
+                    newCostValue = Cost - Cost * (decimal)Discount;
+                    //return ((decimal)Cost - (decimal)Cost * (decimal)Discount / 100);
+                }
+                else
+                {
+                    newCostValue = Cost;
+                    // return (decimal)Cost;
+                }
+                return Math.Round(newCostValue, 2);
+            }
+        }
 
+        public SolidColorBrush FonStyle
+        {
+            get
+            {
+
+                if (Discount > 0)
+                {
+                    return (SolidColorBrush)new BrushConverter().ConvertFromString("LightGreen");
+                }
+                else
+                {
+                    return (SolidColorBrush)new BrushConverter().ConvertFromString("White");
+                }
+            }
+        }
+
+        public double Discount { get; set; }
         public int DiscountIt
         {
             get
@@ -36,7 +88,7 @@ namespace Konstantinova_Autoservice
             }
             set
             {
-                Discount = value/100.0;
+                Discount = value / 100.0;
             }
         }
         public string Description { get; set; }

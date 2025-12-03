@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -68,56 +68,59 @@
       <DependentUpon>AddEditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Client.cs">
-      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ClientService.cs">
-      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DocumentByService.cs">
-      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Gender.cs">
-      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Konstantinova_Autoservice.Context.cs">
+    <Compile Include="KontantinovaAutoserviceModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Konstantinova_Autoservice.Context.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Konstantinova_Autoservice.cs">
+    <Compile Include="KontantinovaAutoserviceModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Konstantinova_Autoservice.Designer.cs">
+    <Compile Include="KontantinovaAutoserviceModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Konstantinova_Autoservice.edmx</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="Manufacturer.cs">
-      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductPhoto.cs">
-      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ProductSale.cs">
-      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Service.cs">
-      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ServicePage.xaml.cs">
       <DependentUpon>ServicePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ServicePhoto.cs">
-      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tag.cs">
-      <DependentUpon>Konstantinova_Autoservice.tt</DependentUpon>
+      <DependentUpon>KontantinovaAutoserviceModel.tt</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml">
       <SubType>Designer</SubType>
@@ -136,6 +139,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignUpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,13 +165,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Konstantinova_Autoservice.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Konstantinova_Autoservice.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <None Include="App.Config" />
-    <None Include="Konstantinova_Autoservice.edmx.diagram">
-      <DependentUpon>Konstantinova_Autoservice.edmx</DependentUpon>
+    <EntityDeploy Include="KontantinovaAutoserviceModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KontantinovaAutoserviceModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="KontantinovaAutoserviceModel.edmx.diagram">
+      <DependentUpon>KontantinovaAutoserviceModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -202,15 +209,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Konstantinova_Autoservice.Context.tt">
+    <Content Include="KontantinovaAutoserviceModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Konstantinova_Autoservice.edmx</DependentUpon>
-      <LastGenOutput>Konstantinova_Autoservice.Context.cs</LastGenOutput>
+      <DependentUpon>KontantinovaAutoserviceModel.edmx</DependentUpon>
+      <LastGenOutput>KontantinovaAutoserviceModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Konstantinova_Autoservice.tt">
+    <Content Include="KontantinovaAutoserviceModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Konstantinova_Autoservice.edmx</DependentUpon>
-      <LastGenOutput>Konstantinova_Autoservice.cs</LastGenOutput>
+      <DependentUpon>KontantinovaAutoserviceModel.edmx</DependentUpon>
+      <LastGenOutput>KontantinovaAutoserviceModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
